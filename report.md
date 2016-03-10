@@ -59,11 +59,13 @@ these pictures from `task2.py`.
 First, create a self defined function named svd. Read the "seaside.jpg" image and assiged to img.
 Then, compute the U,$\Sigma$ and V for for each of the red, green and blue matrices.
 Use numpy function, count_nonzero to find number of non zero elememts in $\Sigma$ for red,green and blue colours respectively.
+
+The following steps are do in the self defined fucntion,svd.
 Create a new Sigma matrix by copying the each of original $\Sigma$ and keep the first n nonzero elememts while set all other none zero elements to zero by using numpy function zeros_like.
 To construct a lower resolution matrix, change the dimension of $\Sigma$ from (800,1) to (800,1000)by using spicy function linalg.diagsvd,it is because the dimension of U is (800,800) and V is (1000,1009).
 In order to use dot multiplication for new matrix,so the new matrix will be U*$\Sigma$ * V which is dimension of (800,1000).
 Then, create and display the new resolution images.
-All the steps above are in self defined function named svd.
+
 
 To compress a lower resolution picture, call the svd function with input n=30.
 To compress a better resolution picture, call the svd function with input n=200.

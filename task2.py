@@ -8,19 +8,7 @@ def svd(n):
     img=mpimg.imread('seaside.jpg')
     [r,g,b] = [img[:,:,i] for i in range(3)]
     
-    #Compute U,Sigma and V for red,greeb,blue matrices
-    Ur, Sr, Vr = sp.linalg.svd(r)
-    Ug, Sg, Vg = sp.linalg.svd(g)
-    Ub, Sb, Vb = sp.linalg.svd(b)
-    
-    
-    #Count how many non zero elements in Sigma respectively
-    non_zero_red=np.count_nonzero(Sr)
-    non_zero_green=np.count_nonzero(Sg)
-    non_zero_blue=np.count_nonzero(Sb)
-    print("The number of nonzero elements in Sigma of red,green and blue are",
-          non_zero_red,",",non_zero_green,"and",non_zero_blue,"respectively.")
-    
+
     #Create a new matrix Sigma
     #Since we know there are no one zero elememts in 3 Sigma
     #keep first n nonzero elements, make all other become zeros
@@ -74,6 +62,19 @@ ax3.imshow(g, cmap = 'Greens')
 ax4.imshow(b, cmap = 'Blues')
 plt.show()
 
+
+#Compute U,Sigma and V for red,greeb,blue matrices
+Ur, Sr, Vr = sp.linalg.svd(r)
+Ug, Sg, Vg = sp.linalg.svd(g)
+Ub, Sb, Vb = sp.linalg.svd(b)
+    
+#Count how many non zero elements in Sigma respectively
+non_zero_red=np.count_nonzero(Sr)
+non_zero_green=np.count_nonzero(Sg)
+non_zero_blue=np.count_nonzero(Sb)
+print("The number of nonzero elements in Sigma of red,green and blue are",
+          non_zero_red,",",non_zero_green,"and",non_zero_blue,"respectively.")
+    
 
 #Lower resolution picture
 svd(30)
