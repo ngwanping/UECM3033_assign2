@@ -14,7 +14,29 @@ https://github.com/ngwanping/UECM3033_assign2
 
 Explain your selection criteria here.
 
+If the matrix is sparse matrix, then we use SOR method.
+Sparse matrix is a matrix which the most elements are zero.
+The condition i set for deciding whether use LU or SOR by comparing the number of nonzero elements in matrix A with the half of the length of matrix A.
+If the nonzero element in matrix A is more than half of total elements in matrix A, it mean matrix A have large number of nonzero compared to zero.
+So if the condition is true, it will perform LU factorization, else it will perform SOR method.
+The number of nonzero element is counted by using numpy function,count_nonzero.
+The length of A is use len.
+
+
 Explain how you implement your `task1.py` here.
+
+In self-defined fucntion named lu, decompose the LU sand solve the LU using for.
+To perform SOR method, set a iteration limit as 10 and initiate omega as 1.03.
+In self-defined fucntion named sor, let x be zero matrix which is same size as matrix b.
+
+Use np.array to make the A and b to be a matrix.
+astype float is used to convert to float.
+Assign the variables sol=np.linalg.solve(A,b) 
+Then solve the Ax=b by using LU if the condition is true ,else use SOR.
+Display the sol.
+
+
+
 
 ---------------------------------------------------------
 
