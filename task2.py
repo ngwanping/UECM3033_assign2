@@ -5,9 +5,6 @@ import scipy as sp
 
 #Create a self defined function for SVD
 def svd(n):
-    img=mpimg.imread('seaside.jpg')
-    [r,g,b] = [img[:,:,i] for i in range(3)]
-    
 
     #Create a new matrix Sigma
     #Since we know there are no one zero elememts in 3 Sigma
